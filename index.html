@@ -1,22 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Questrial&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  </head>
-  <body>
-    <header>
 
-    </header>
-    <main>
-        
-    </main>
-    <footer></footer>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Craftivo Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="index-page">
+
+  <!-- En-tête du site : contient le logo, le menu de navigation et le bouton d'accès principal -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <!-- Conteneur fluide de l'en-tête : organise le logo, le menu et le bouton -->
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Décommentez la ligne ci-dessous si vous souhaitez aussi utiliser un logo image -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Craftivo</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <!-- Contenu principal : regroupe les sections principales de la page -->
+  <main class="main">
+
+    <!-- Section Hero : présente l'accueil avec une image d'arrière-plan, le titre et les liens sociaux -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="./Assets/profile/profile-bg-5.webp" alt="" data-aos="fade-in">
+
+      <!-- Conteneur principal de la section d'accueil -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- Ligne centrée pour le contenu du hero -->
+        <div class="row justify-content-center">
+          <!-- Colonne centrale du contenu hero -->
+          <div class="col-lg-8 text-center">
+            <h2>Hi, I'm Alex Morgan</h2>
+            <p>I'm a <span >"Developer"</span></p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Section Hero -->
+
+    <!-- Section À propos : présente la fiche profil, la biographie et les informations de contact -->
+    <section id="about" class="about section">
+
+      <!-- Titre de la section -->
+      <!-- Conteneur du titre de la section À propos -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">About Me</span>
+        <h2>About Me</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
+      </div><!-- Fin du titre de la section -->
+
+      <!-- Conteneur principal de la section À propos -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- Grille de contenu avec la carte profil à gauche et le texte à droite -->
+        <div class="row gy-5 align-items-start">
+          <!-- Colonne gauche pour la carte de profil -->
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+            <!-- Carte de profil avec photo, rôle, statistiques et actions -->
+            <div class="profile-card">
+              <!-- En-tête de la carte profil -->
+              <div class="profile-header">
+                <!-- Avatar du profil -->
+                <div class="profile-avatar">
+                  <img src="./Assets/profile/profile-square-3.webp" class="img-fluid" alt="">
+                  <div class="status-indicator"></div>
+                </div>
+                <h3>Jordan Mitchell</h3>
+                <span class="role">Full Stack Developer</span>
+                <div class="rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span>4.8</span>
+                </div>
+              </div>
+
+              <!-- Statistiques du profil -->
+              <div class="profile-stats">
+                <div class="stat-item">
+                  <h4>156</h4>
+                  <p>Projects</p>
+                </div>
+                <div class="stat-item">
+                  <h4>8+</h4>
+                  <p>Years</p>
+                </div>
+                <div class="stat-item">
+                  <h4>42</h4>
+                  <p>Awards</p>
+                </div>
+              </div>
+
+              <!-- Actions principales du profil -->
+              <div class="profile-actions">
+                <a href="#" class="btn-primary"><i class="bi bi-download"></i> Download CV</a>
+                <a href="#" class="btn-secondary"><i class="bi bi-envelope"></i> Contact</a>
+              </div>
+
+              <!-- Liens de réseaux sociaux du profil -->
+              <div class="social-connect">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Colonne droite pour le contenu descriptif -->
+          <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+            <!-- Conteneur du contenu textuel de la section -->
+            <div class="content-wrapper">
+              <!-- Section de biographie -->
+              <div class="bio-section">
+                <div class="section-tag">About Me</div>
+                <h2>Transforming Ideas into Digital Reality</h2>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+              </div>
+
+              <!-- Grille d'informations détaillées -->
+              <div class="details-grid">
+                <!-- Bloc d'information détaillée -->
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="250">
+                  <i class="bi bi-briefcase"></i>
+                  <div class="detail-content">
+                    <span>Experience</span>
+                    <strong>8+ Years</strong>
+                  </div>
+                </div>
+
+                <!-- Bloc d'information détaillée -->
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-mortarboard"></i>
+                  <div class="detail-content">
+                    <span>Degree</span>
+                    <strong>Master of Science</strong>
+                  </div>
+                </div>
+
+                <!-- Bloc d'information détaillée -->
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="350">
+                  <i class="bi bi-geo-alt"></i>
+                  <div class="detail-content">
+                    <span>Based In</span>
+                    <strong>Portland, OR</strong>
+                  </div>
+                </div>
+
+                <!-- Bloc d'information détaillée -->
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bi bi-envelope"></i>
+                  <div class="detail-content">
+                    <span>Email</span>
+                    <strong>contact@example.com</strong>
+                  </div>
+                </div>
+
+                <!-- Bloc d'information détaillée -->
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="150">
+                  <i class="bi bi-phone"></i>
+                  <div class="detail-content">
+                    <span>Phone</span>
+                    <strong>+1 (555) 234-5678</strong>
+                  </div>
+                </div>
+
+                <!-- Bloc d'information détaillée -->
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-calendar-check"></i>
+                  <div class="detail-content">
+                    <span>Availability</span>
+                    <strong>Open to Work</strong>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    </section><!-- /Section À propos -->
+
+  </main>
+
+  <!-- Pied de page : contient les liens utiles, les coordonnées et les informations de copyright -->
+  <footer id="footer" class="footer">
+
+    <!-- Bloc supérieur du pied de page -->
+    <div class="container footer-top">
+      <!-- Ligne de colonnes du pied de page -->
+      <div class="row gy-4">
+        <!-- Bloc de liens du pied de page -->
+        <div class="footer-links">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename-end">Craftivo</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <!-- Liens sociaux du pied de page -->
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Bloc de liens utiles -->
+        <div class="footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Bloc des services proposés -->
+        <div class="footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <!-- Bloc de contact du pied de page -->
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section de copyright et crédits -->
+    <div class="container copyright text-center mt-4" style="text-align: center; background: #484848">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Craftivo</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+       
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+
 </html>

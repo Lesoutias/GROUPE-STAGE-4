@@ -1,0 +1,1271 @@
+
+:root {
+  /* Polices globales utilisées sur l'ensemble du site */
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Mulish",  sans-serif;
+  --nav-font: "Raleway",  sans-serif;
+}
+
+/* Couleurs globales - Les variables suivantes sont utilisées dans tout le site. Les modifier ici changera la palette complète du site. */
+:root { 
+  --background-color: #141414; /* Couleur d'arrière-plan du site, y compris les sections individuelles */
+  --default-color: #d9d9d9; /* Couleur par défaut utilisée pour la majorité du texte sur le site */
+  --heading-color: #ededed; /* Couleur des titres, sous-titres et intitulés sur l'ensemble du site */
+  --accent-color: #ff4d4f; /* Couleur d'accent représentant votre marque. Elle sert aux boutons, liens et autres éléments à mettre en valeur */
+  --surface-color: #1c1c1c; /* La couleur de surface sert d'arrière-plan aux éléments en boîte dans les sections, comme les cartes ou encadrés. */
+  --contrast-color: #ffffff; /* Couleur de contraste pour le texte, afin de garantir une bonne lisibilité sur les fonds accent, titre ou couleur par défaut. */
+}
+
+/* Couleurs du menu de navigation - Les variables suivantes sont utilisées uniquement pour le menu. Elles sont distinctes des couleurs globales pour permettre plus de personnalisation. */
+:root {
+  --nav-color: #d9d9d9;  /* Couleur par défaut des liens du menu principal */
+  --nav-hover-color: #ff4d4f; /* Appliquée aux liens du menu principal au survol ou lorsqu'ils sont actifs */
+  --nav-mobile-background-color: #2e2e2e; /* Utilisée comme couleur d'arrière-plan du menu de navigation sur mobile */
+  --nav-dropdown-background-color: #2e2e2e; /* Utilisée comme couleur d'arrière-plan des menus déroulants du navigation */
+  --nav-dropdown-color: #d9d9d9; /* Utilisée pour les liens des éléments déroulants du menu de navigation. */
+  --nav-dropdown-hover-color: #ff4d4f; /* Similaire à --nav-hover-color, cette couleur s'applique aux liens déroulants au survol. */
+}
+
+/* Préréglages de couleurs - Ces classes remplacent les couleurs globales lorsqu'elles sont appliquées à une section ou un élément, pour réutiliser facilement la même palette. */
+
+/* Thème clair pour les blocs nécessitant un contraste plus doux */
+.light-background {
+  --background-color: rgba(41, 41, 41, 0.8);
+  --surface-color: #484848;
+}
+
+/* Thème sombre pour les sections de mise en valeur */
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+/* Défilement fluide */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# Styles généraux et classes partagées
+--------------------------------------------------------------*/
+/* Styles de base du document : structure générale du site */
+/* Applique les couleurs de fond, la typographie et l'espacement global du corps de page */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+  padding-left: 60px;
+  padding-right: 60px;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+/* Applique la couleur et la police des titres de niveau 1 à 6 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# En-tête global
+--------------------------------------------------------------*/
+/* Styles du header principal du site */
+.header {
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: transparent;
+  padding: 6px 0;
+  transition: all 0.5s; /* Anime toutes les transitions de style du header */
+  z-index: 1000; /* Place le header au-dessus des autres éléments */
+  position: relative; /* Permet un positionnement relatif par rapport aux autres éléments */
+}
+
+/* Organise les éléments internes de l'en-tête sur une ligne avec espace entre eux */
+.header .container-fluid {
+  display: flex; /* Affiche les éléments en ligne avec un arrangement flexible */
+  align-items: center; /* Centre verticalement les éléments dans la barre */
+  justify-content: space-between; /* Répartit l'espace entre les éléments du header */
+  width: 100%; /* Occupe toute la largeur disponible */
+  gap: 20px; /* Ajoute un espace entre les éléments du header */
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  margin-right: auto; /* Pousse le logo vers la gauche en laissant l'espace au reste */
+  line-height: 1; /* Réduit l'interligne pour un rendu plus compact */
+}
+
+.header .navmenu {
+  margin-left: auto; /* Pousse le menu vers la droite de l'en-tête */
+  display: flex; /* Affiche les éléments du menu sur une ligne */
+  align-items: center; /* Centre verticalement les éléments du menu */
+}
+
+.header .btn-getstarted {
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+/* Définit la taille du logo image dans l'en-tête */
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+/* Style le texte du nom du site dans l'en-tête */
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 400;
+  color: var(--heading-color);
+}
+
+/* Style le nom du site présent dans le pied de page */
+.sitename-end {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 400;
+  color: var(--heading-color);
+}
+
+/* Applique le style visuel du bouton principal et de son état focus */
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+/* Modifie le bouton au survol pour renforcer l'interaction */
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête global au défilement
+------------------------------*/
+.scrolled .header {
+  --background-color: rgba(20, 20, 20, 0.8);
+}
+
+/* En-tête de la page d'accueil
+------------------------------*/
+.index-page .header {
+  --background-color: rgba(255, 255, 255, 0);
+}
+
+/* En-tête de la page d'accueil au défilement
+------------------------------*/
+.index-page.scrolled .header {
+  --background-color: rgba(20, 20, 20, 0.8);
+}
+
+/*--------------------------------------------------------------
+# Menu de navigation
+--------------------------------------------------------------*/
+/* Styles du menu de navigation sur grand écran */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  /* Affiche les liens du menu en ligne et les aligne verticalement */
+.navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  /* Positionne chaque élément du menu dans un contexte de dropdown */
+.navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  /* Cache et positionne le sous-menu déroulant pour l'afficher au survol */
+.navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute; /* Positionne le sous-menu par rapport à son parent */
+    visibility: hidden; /* Masque le sous-menu avant son affichage */
+    left: 14px; /* Décale le sous-menu horizontalement */
+    top: 130%; /* Place le sous-menu en dessous du lien parent */
+    opacity: 0; /* Rend le sous-menu invisible au départ */
+    transition: 0.3s; /* Anime l'apparition du sous-menu */
+    border-radius: 4px; /* Arrondit les angles du sous-menu */
+    z-index: 99; /* Place le sous-menu au-dessus du contenu voisin */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1); /* Ajoute une ombre douce autour du sous-menu */
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  /* Affiche le sous-menu au survol de l'élément parent */
+.navmenu .dropdown:hover>ul {
+    opacity: 1; /* Rend le sous-menu visible */
+    top: 100%; /* Positionne correctement le sous-menu sous le parent */
+    visibility: visible; /* Affiche le sous-menu */
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Pied de page global
+--------------------------------------------------------------*/
+/* Styles du pied de page et de ses colonnes d'information */
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.footer .footer-about p {
+  font-size: 30px;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  font-weight: 400;
+}
+
+/* Style les icônes de réseaux sociaux du pied de page */
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+/* Met en valeur les icônes sociales au survol */
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-top {
+  padding-bottom: 20px;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+/* Style les liens de navigation dans les colonnes du pied de page */
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+/* Donne une apparence spécifique à la ligne de copyright en bas du pied de page */
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# Chargeur de page
+--------------------------------------------------------------*/
+/* Animation de chargement affichée au début du chargement */
+#preloader {
+  position: fixed; /* Fixe le chargeur par rapport à la fenêtre */
+  inset: 0; /* Étend le chargeur sur toute la fenêtre */
+  z-index: 999999; /* Le place au-dessus de tout le reste */
+  overflow: hidden; /* Masque tout débordement */
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px); /* Centre verticalement la roue de chargement */
+  left: calc(50% - 30px); /* Centre horizontalement la roue de chargement */
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite; /* Fait tourner la roue en boucle */
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Bouton de retour en haut
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed; /* Fixe le bouton en bas à droite de la fenêtre */
+  visibility: hidden; /* Le masque par défaut */
+  opacity: 0; /* Le rend transparent par défaut */
+  right: 15px; /* Éloigne le bouton du bord droit */
+  bottom: 15px; /* Éloigne le bouton du bord bas */
+  z-index: 99999; /* Le place au-dessus du contenu */
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s; /* Anime l'apparition et la disparition du bouton */
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Désactiver le délai d'animation AOS sur mobile
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Titres de pages globaux et fil d'Ariane
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Sections globales
+--------------------------------------------------------------*/
+/* Applique l'espacement et le fond de base à toutes les sections du site */
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 90px; /* Évite que la section soit cachée sous le header lors du scroll */
+  overflow: clip; /* Coupe tout contenu débordant proprement */
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Titres des sections globales
+--------------------------------------------------------------*/
+/* Centre et structure le titre de chaque section */
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Met en forme le sous-titre affiché au-dessus du titre de section */
+.section-title .subtitle {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title .subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--accent-color);
+}
+
+.section-title p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  max-width: 900px;
+  margin: 0 auto;
+  text-wrap: balance; /* Améliore l'équilibrage des lignes du paragraphe */
+}
+
+/*--------------------------------------------------------------
+# Section hero
+--------------------------------------------------------------*/
+/* Style de la section d'introduction avec image pleine largeur */
+.hero {
+  margin-top: -90px;
+  padding-top: 120px;
+  min-height: 70vh;
+  position: relative; /* Permet de superposer le contenu sur l'image */
+  display: flex; /* Place le contenu du hero en colonne ou en ligne flexible */
+  align-items: center; /* Centre verticalement le contenu */
+  justify-content: center; /* Centre horizontalement le contenu */
+  overflow: hidden; /* Coupe les éléments qui dépassent de la section */
+  padding-bottom: 60px;
+  border-radius: 0;
+}
+
+/* Positionne l'image d'arrière-plan du hero pour qu'elle couvre toute la section */
+.hero img {
+  position: absolute; /* Place l'image en arrière-plan de la section */
+  inset: 0; /* Étend l'image sur toute la surface du hero */
+  display: block; /* Force l'image à se comporter comme un bloc */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recadre l'image pour couvrir entièrement la zone */
+  z-index: 1; /* Place l'image sous le contenu du hero */
+}
+
+.hero {
+  width: 100vw; /* Fait prendre toute la largeur de la fenêtre */
+  margin-left: calc(50% - 50vw); /* Centre la section sur toute la largeur */
+  margin-right: calc(50% - 50vw); /* Équilibre les marges externes */
+}
+
+/* Ajoute un filtre sombre sur l'image du hero pour améliorer la lisibilité du texte */
+.hero:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute; /* Superpose un filtre sombre sur l'image */
+  inset: 0; /* Étend le filtre sur toute la section */
+  z-index: 2; /* Place le filtre au-dessus de l'image mais sous le contenu */
+  border-radius: 0;
+}
+
+/* Place le contenu texte du hero au-dessus de l'image et du masque sombre */
+.hero .container {
+  position: relative; /* Permet au contenu de se placer au-dessus du masque */
+  z-index: 3; /* Place le contenu au premier plan */
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.hero p span {
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.hero .social-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Style les icônes de réseaux sociaux du hero */
+.hero .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  color: var(--default-color);
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.hero .social-links a:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Section à propos
+--------------------------------------------------------------*/
+/* Style de la section de présentation avec carte profil et contenu textuel */
+/* Style la section À propos avec un fond décoratif et un positionnement relatif */
+.about {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Crée un halo décoratif en arrière-plan de la section À propos */
+.about::before {
+  content: "";
+  position: absolute; /* Place le décor en arrière-plan */
+  top: -50%; /* Le décale vers le haut */
+  right: -20%; /* Le décale vers la droite */
+  width: 800px; /* Donne une grande taille au cercle décoratif */
+  height: 800px; /* Donne une grande taille au cercle décoratif */
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent-color), transparent 85%) 0%, transparent 70%); /* Crée un dégradé en forme de halo */
+  border-radius: 50%; /* Transforme le bloc en cercle */
+  z-index: 0; /* Le place derrière le contenu */
+  pointer-events: none; /* Laisse passer les clics au contenu en dessous */
+}
+
+.about .container {
+  position: relative; /* Permet au contenu d'être au-dessus du décor */
+  z-index: 1; /* Place le contenu devant le halo */
+}
+
+/* Organise les colonnes de la section À propos en grille flexible */
+.about .row {
+  display: flex; /* Organise les colonnes de contenu sur une ligne */
+  align-items: flex-start; /* Aligne les colonnes au début du conteneur */
+  gap: 30px; /* Ajoute un espace entre les colonnes */
+}
+
+.about .row > .col-lg-4 {
+  flex: 0 0 30%; /* La colonne gauche garde une largeur fixe de 30% */
+  max-width: 30%; /* Empêche la colonne de dépasser 30% */
+}
+
+.about .row > .col-lg-8 {
+  flex: 0 0 70%; /* La colonne droite occupe 70% de la largeur */
+  max-width: 70%; /* Empêche la colonne de dépasser 70% */
+}
+
+.about .profile-card {
+  background: var(--surface-color);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  position: sticky; /* La carte reste fixe pendant le scroll jusqu'à une certaine position */
+  top: 100px; /* La carte se colle à 100px du haut de l'écran */
+}
+
+/* Centre le contenu en haut de la carte profil */
+.about .profile-card .profile-header {
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.about .profile-card .profile-header .profile-avatar {
+  width: 140px; /* Définit la taille de l'avatar */
+  height: 140px; /* Définit la taille de l'avatar */
+  margin: 0 auto 24px; /* Centre l'avatar et ajoute un espace sous lui */
+  position: relative; /* Permet de positionner l'indicateur de statut */
+  border-radius: 50%; /* Rend l'avatar circulaire */
+  padding: 6px; /* Ajoute un espace autour de l'image */
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b9d 50%));
+}
+
+/* Fait remplir l'image de l'avatar dans son conteneur circulaire */
+.about .profile-card .profile-header .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--surface-color);
+}
+
+.about .profile-card .profile-header .profile-avatar .status-indicator {
+  position: absolute; /* Positionne l'indicateur de statut sur l'avatar */
+  bottom: 8px; /* Le place en bas */
+  right: 8px; /* Le place à droite */
+  width: 24px; /* Taille du point de statut */
+  height: 24px; /* Taille du point de statut */
+  background: #10b981;
+  border: 4px solid var(--surface-color);
+  border-radius: 50%;
+  animation: pulse 2s infinite; /* Fait clignoter l'indicateur de statut */
+}
+
+.about .profile-card .profile-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--heading-color);
+}
+
+.about .profile-card .profile-header .role {
+  display: inline-block;
+  font-size: 15px;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* Aligne les étoiles de notation sous le rôle du profil */
+.about .profile-card .profile-header .rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.about .profile-card .profile-header .rating i {
+  color: #fbbf24;
+  font-size: 16px;
+}
+
+.about .profile-card .profile-header .rating span {
+  margin-left: 8px;
+  font-weight: 600;
+  color: var(--default-color);
+  font-size: 15px;
+}
+
+.about .profile-card .profile-stats {
+  display: grid; /* Affiche les statistiques en grille */
+  grid-template-columns: repeat(3, 1fr); /* Crée trois colonnes égales */
+  gap: 20px; /* Ajoute un espacement entre les colonnes */
+  padding: 30px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.about .profile-card .profile-stats .stat-item {
+  text-align: center;
+}
+
+.about .profile-card .profile-stats .stat-item h4 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+}
+
+.about .profile-card .profile-stats .stat-item p {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Organise les boutons d'action du profil en colonne */
+.about .profile-card .profile-actions {
+  display: flex; /* Organise les actions du profil en colonne */
+  flex-direction: column; /* Dispose les boutons verticalement */
+  gap: 12px; /* Ajoute un espace entre les boutons */
+  padding: 30px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.about .profile-card .profile-actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about .profile-card .profile-actions a.btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.about .profile-card .profile-actions a.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 15%);
+  transform: translateY(-2px); /* Déplace légèrement le bouton vers le haut au survol */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Ajoute une ombre pour mettre le bouton en valeur */
+}
+
+.about .profile-card .profile-actions a.btn-secondary {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+.about .profile-card .profile-actions a.btn-secondary:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.about .profile-card .profile-actions a i {
+  font-size: 18px;
+}
+
+/* Affiche les icônes de réseaux sociaux en bas de la carte profil */
+.about .profile-card .social-connect {
+  display: flex; /* Affiche les icônes de réseau social sur une ligne */
+  justify-content: center; /* Centre les icônes horizontalement */
+  gap: 12px; /* Ajoute un espace entre les icônes */
+  padding-top: 30px;
+}
+
+.about .profile-card .social-connect a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  border-radius: 12px;
+  color: var(--default-color);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.about .profile-card .social-connect a:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+}
+
+/* Bloc de biographie dans le contenu de droite */
+/* Style la section de biographie du contenu textuel de droite */
+.about .content-wrapper .bio-section {
+  margin-bottom: 50px;
+}
+
+.about .content-wrapper .bio-section .section-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.about .content-wrapper .bio-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* Style les paragraphes de la biographie dans le contenu principal */
+.about .content-wrapper .bio-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin-bottom: 16px;
+}
+
+/* Supprime la marge du dernier paragraphe de la biographie pour un rendu plus compact */
+.about .content-wrapper .bio-section p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content-wrapper .details-grid {
+  display: grid; /* Crée une grille de cartes d'information */
+  grid-template-columns: repeat(2, 1fr); /* Répartit les cartes sur deux colonnes */
+  gap: 24px; /* Espace entre les cartes */
+  margin-bottom: 50px; /* Sépare la grille du contenu suivant */
+}
+
+.about .content-wrapper .details-grid .detail-item {
+  display: flex; /* Affiche l'icône et le texte côte à côte */
+  align-items: center; /* Centre verticalement l'icône et le texte */
+  gap: 16px; /* Ajoute un espace entre l'icône et le contenu */
+  padding: 24px;
+  background: var(--surface-color);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  transition: all 0.3s ease;
+}
+
+/* Donne un effet visuel au survol des éléments de détails */
+.about .content-wrapper .details-grid .detail-item:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-3px); /* Soulève la carte au survol */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Ajoute une ombre pour l'effet de relief */
+}
+
+/* Donne la taille et la couleur des icônes présentes dans chaque carte de détail */
+.about .content-wrapper .details-grid .detail-item i {
+  font-size: 28px;
+  color: var(--accent-color);
+  flex-shrink: 0; /* Empêche l'icône de rétrécir dans le conteneur */
+}
+
+/* Style le libellé court affiché au-dessus de chaque valeur d'information */
+.about .content-wrapper .details-grid .detail-item .detail-content span {
+  display: block;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* Style la valeur principale affichée dans chaque carte de détail */
+.about .content-wrapper .details-grid .detail-item .detail-content strong {
+  display: block;
+  font-size: 16px;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+/* Met en forme l'étiquette de section au-dessus du bloc de compétences */
+.about .content-wrapper .skills-showcase .section-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* Style le titre du bloc de compétences */
+.about .content-wrapper .skills-showcase h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 32px;
+}
+
+.about .content-wrapper .skills-showcase .skills-list .skill-item {
+  margin-bottom: 28px;
+}
+
+/* Aligne le nom et le pourcentage de chaque compétence sur une même ligne */
+.about .content-wrapper .skills-showcase .skills-list .skill-item .skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style le nom de chaque compétence affiché à gauche de la barre */
+.about .content-wrapper .skills-showcase .skills-list .skill-item .skill-info .skill-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+/* Style le pourcentage associé à chaque compétence */
+.about .content-wrapper .skills-showcase .skills-list .skill-item .skill-info .skill-percent {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Définit l'apparence de la barre de fond des compétences */
+.about .content-wrapper .skills-showcase .skills-list .skill-item .progress {
+  height: 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  overflow: hidden;
+}
+
+/* Anime la barre de progression des compétences */
+.about .content-wrapper .skills-showcase .skills-list .skill-item .progress .progress-bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b9d 50%));
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1); /* Anime la progression de la barre avec une courbe fluide */
+  position: relative; /* Permet de positionner le pseudo-élément de brillance */
+}
+
+/* Ajoute un effet de brillance animé sur la barre de progression */
+.about .content-wrapper .skills-showcase .skills-list .skill-item .progress .progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite; /* Fait défiler un effet de lumière sur la barre */
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 992px) {
+  .about .profile-card {
+    position: static;
+    margin-bottom: 40px;
+  }
+
+  .about .content-wrapper .bio-section h2 {
+    font-size: 30px;
+  }
+
+  .about .content-wrapper .details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about .content-wrapper .skills-showcase h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about .profile-card {
+    padding: 30px 20px;
+  }
+
+  .about .profile-card .profile-header .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about .profile-card .profile-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .about .profile-card .profile-stats .stat-item h4 {
+    font-size: 24px;
+  }
+
+  .about .content-wrapper .bio-section h2 {
+    font-size: 26px;
+  }
+
+  .about .content-wrapper .details-grid .detail-item {
+    padding: 18px;
+  }
+
+  .about .content-wrapper .details-grid .detail-item i {
+    font-size: 24px;
+  }
+}
+/* Styles de finition du pied de page */
+.footer {
+  background-color: #141414;
+}
+
+/* Organise les colonnes du pied de page en grille responsive */
+.footer .row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Donne un espace interne aux blocs de contenu du pied de page */
+.footer .footer-links {
+  padding: 20px;
+  background: transparent;
+  text-align: left;
+}
+
+/* Affiche les icônes sociales en ligne dans le pied de page */
+.footer .social-links {
+  display: flex;
+}
+
+/* Mise en page d'éléments en ligne */
+/* Place plusieurs blocs en ligne avec un espace réparti entre eux */
+.big-container {
+  display: flex;          /* aligne les div en ligne */
+  justify-content: space-between; /* espace entre eux */
+}
+
+/* Donne la même largeur à chaque boîte du conteneur principal */
+.big-box {
+  flex: 1;                /* chaque div prend la même largeur */
+  margin: 10px;
+  padding: 50px;
+  background: lightblue;
+  text-align: center;
+  font-size: 20px;
+}
+/* Alignement du conteneur fluide */
+/* Aligne les éléments du conteneur fluide horizontalement */
+.container-fluid{
+  display: flex;
+  align-items: center;
+}
